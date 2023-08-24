@@ -1,0 +1,8 @@
+module zx_epmio (
+input a0, a1, a2, a14, a15,
+output covox, 
+
+);
+
+
+endmodule

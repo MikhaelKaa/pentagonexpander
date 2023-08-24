@@ -1,0 +1,17 @@
+module ay_vhdl_probe
+(
+input ADR[15:0],
+input IORQ,
+input WR,
+input CLC,
+input M1,
+
+output BDIR, BC1,
+output CLC1_75
+);
+
+wire ay_temp;
+ay_temp = !((!(ADR[1] | IORQ)) & (ADR[13] & ADR{15}));
+assign BC1 = !(ay_temp | (!(ADR[14] & M1))); 
+assign BDIR = !(ay_temp | WR);
+endmodule 

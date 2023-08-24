@@ -1,0 +1,996 @@
+TimeQuest Timing Analyzer report for ay_verilog_probe
+Wed Oct 06 00:55:06 2021
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'CLK14M'
+ 12. Setup: 'SPI_SCK'
+ 13. Setup: 'button_3'
+ 14. Hold: 'CLK14M'
+ 15. Hold: 'SPI_SCK'
+ 16. Hold: 'button_3'
+ 17. Minimum Pulse Width: 'SPI_SCK'
+ 18. Minimum Pulse Width: 'CLK14M'
+ 19. Minimum Pulse Width: 'button_3'
+ 20. Setup Times
+ 21. Hold Times
+ 22. Clock to Output Times
+ 23. Minimum Clock to Output Times
+ 24. Propagation Delay
+ 25. Minimum Propagation Delay
+ 26. Output Enable Times
+ 27. Minimum Output Enable Times
+ 28. Output Disable Times
+ 29. Minimum Output Disable Times
+ 30. Setup Transfers
+ 31. Hold Transfers
+ 32. Report TCCS
+ 33. Report RSKM
+ 34. Unconstrained Paths
+ 35. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; ay_verilog_probe                                                  ;
+; Device Family      ; MAX7000S                                                          ;
+; Device Name        ; EPM7128STC100-15                                                  ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Slow Model                                                        ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                               ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets      ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; button_3   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { button_3 } ;
+; CLK14M     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLK14M }   ;
+; SPI_SCK    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { SPI_SCK }  ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+
+
++-------------------------------------------------+
+; Fmax Summary                                    ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 76.92 MHz ; 76.92 MHz       ; CLK14M     ;      ;
+; 76.92 MHz ; 76.92 MHz       ; SPI_SCK    ;      ;
+; 76.92 MHz ; 76.92 MHz       ; button_3   ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Setup Summary                      ;
++----------+---------+---------------+
+; Clock    ; Slack   ; End Point TNS ;
++----------+---------+---------------+
+; CLK14M   ; -12.500 ; -156.500      ;
+; SPI_SCK  ; -12.000 ; -864.000      ;
+; button_3 ; -12.000 ; -12.000       ;
++----------+---------+---------------+
+
+
++----------------------------------+
+; Hold Summary                     ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLK14M   ; 5.000 ; 0.000         ;
+; SPI_SCK  ; 5.000 ; 0.000         ;
+; button_3 ; 5.000 ; 0.000         ;
++----------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++-----------------------------------+
+; Minimum Pulse Width Summary       ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; SPI_SCK  ; -5.500 ; -792.000      ;
+; CLK14M   ; -5.500 ; -187.000      ;
+; button_3 ; -5.500 ; -11.000       ;
++----------+--------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Setup: 'CLK14M'                                                                                                 ;
++---------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node      ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; -12.500 ; spi_config[7]  ; kb_read        ; SPI_SCK      ; CLK14M      ; 0.500        ; 0.000      ; 9.000      ;
+; -12.000 ; reg_7ffd[4]    ; reg_7ffd[4]    ; CLK14M       ; CLK14M      ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; clk_div_cnt[0] ; clk_div_cnt[0] ; CLK14M       ; CLK14M      ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; clk_div_cnt[1] ; clk_div_cnt[1] ; CLK14M       ; CLK14M      ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; clk_div_cnt[0] ; clk_div_cnt[1] ; CLK14M       ; CLK14M      ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; clk_div_cnt[2] ; clk_div_cnt[2] ; CLK14M       ; CLK14M      ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; clk_div_cnt[1] ; clk_div_cnt[2] ; CLK14M       ; CLK14M      ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; clk_div_cnt[0] ; clk_div_cnt[2] ; CLK14M       ; CLK14M      ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; reg_7ffd[7]    ; reg_7ffd[7]    ; CLK14M       ; CLK14M      ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; reg_7ffd[6]    ; reg_7ffd[6]    ; CLK14M       ; CLK14M      ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; reg_7ffd[5]    ; reg_7ffd[5]    ; CLK14M       ; CLK14M      ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; reg_7ffd[3]    ; reg_7ffd[3]    ; CLK14M       ; CLK14M      ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; reg_7ffd[2]    ; reg_7ffd[2]    ; CLK14M       ; CLK14M      ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; reg_7ffd[1]    ; reg_7ffd[1]    ; CLK14M       ; CLK14M      ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; reg_7ffd[0]    ; reg_7ffd[0]    ; CLK14M       ; CLK14M      ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; pre_beeper     ; pre_beeper     ; CLK14M       ; CLK14M      ; 1.000        ; 0.000      ; 9.000      ;
++---------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Setup: 'SPI_SCK'                                                                                              ;
++---------+---------------+---------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node     ; To Node       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+---------------+---------------+--------------+-------------+--------------+------------+------------+
+; -12.000 ; spi_mouse[0]  ; spi_mouse[0]  ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[1]  ; spi_mouse[1]  ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[0]  ; spi_mouse[1]  ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[2]  ; spi_mouse[2]  ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[1]  ; spi_mouse[2]  ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[3]  ; spi_mouse[3]  ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[2]  ; spi_mouse[3]  ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[4]  ; spi_mouse[4]  ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[3]  ; spi_mouse[4]  ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[5]  ; spi_mouse[5]  ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[4]  ; spi_mouse[5]  ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[6]  ; spi_mouse[6]  ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[5]  ; spi_mouse[6]  ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[7]  ; spi_mouse[7]  ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[6]  ; spi_mouse[7]  ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[8]  ; spi_mouse[8]  ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[7]  ; spi_mouse[8]  ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[9]  ; spi_mouse[9]  ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[8]  ; spi_mouse[9]  ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[10] ; spi_mouse[10] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[9]  ; spi_mouse[10] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[11] ; spi_mouse[11] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[10] ; spi_mouse[11] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[12] ; spi_mouse[12] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[11] ; spi_mouse[12] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[13] ; spi_mouse[13] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[12] ; spi_mouse[13] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[14] ; spi_mouse[14] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[13] ; spi_mouse[14] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[15] ; spi_mouse[15] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[14] ; spi_mouse[15] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[16] ; spi_mouse[16] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[15] ; spi_mouse[16] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[17] ; spi_mouse[17] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[16] ; spi_mouse[17] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[18] ; spi_mouse[18] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[17] ; spi_mouse[18] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[19] ; spi_mouse[19] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[18] ; spi_mouse[19] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[20] ; spi_mouse[20] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[19] ; spi_mouse[20] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_config[0] ; spi_config[0] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[0]    ; spi_kbd[0]    ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[21] ; spi_mouse[21] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[20] ; spi_mouse[21] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[22] ; spi_mouse[22] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[21] ; spi_mouse[22] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[23] ; spi_mouse[23] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_mouse[22] ; spi_mouse[23] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_config[1] ; spi_config[1] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_config[0] ; spi_config[1] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[1]    ; spi_kbd[1]    ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[0]    ; spi_kbd[1]    ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_config[2] ; spi_config[2] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_config[1] ; spi_config[2] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[2]    ; spi_kbd[2]    ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[1]    ; spi_kbd[2]    ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_config[3] ; spi_config[3] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_config[2] ; spi_config[3] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[3]    ; spi_kbd[3]    ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[2]    ; spi_kbd[3]    ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_config[4] ; spi_config[4] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_config[3] ; spi_config[4] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[4]    ; spi_kbd[4]    ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[3]    ; spi_kbd[4]    ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_config[5] ; spi_config[5] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_config[4] ; spi_config[5] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[5]    ; spi_kbd[5]    ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[4]    ; spi_kbd[5]    ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_config[6] ; spi_config[6] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_config[5] ; spi_config[6] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[6]    ; spi_kbd[6]    ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[5]    ; spi_kbd[6]    ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_config[7] ; spi_config[7] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_config[6] ; spi_config[7] ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[7]    ; spi_kbd[7]    ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[6]    ; spi_kbd[7]    ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[8]    ; spi_kbd[8]    ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[7]    ; spi_kbd[8]    ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[9]    ; spi_kbd[9]    ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[8]    ; spi_kbd[9]    ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[10]   ; spi_kbd[10]   ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[9]    ; spi_kbd[10]   ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[11]   ; spi_kbd[11]   ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[10]   ; spi_kbd[11]   ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[12]   ; spi_kbd[12]   ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[11]   ; spi_kbd[12]   ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[13]   ; spi_kbd[13]   ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[12]   ; spi_kbd[13]   ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[14]   ; spi_kbd[14]   ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[13]   ; spi_kbd[14]   ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[15]   ; spi_kbd[15]   ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[14]   ; spi_kbd[15]   ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[16]   ; spi_kbd[16]   ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[15]   ; spi_kbd[16]   ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[17]   ; spi_kbd[17]   ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[16]   ; spi_kbd[17]   ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[18]   ; spi_kbd[18]   ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[17]   ; spi_kbd[18]   ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; spi_kbd[19]   ; spi_kbd[19]   ; SPI_SCK      ; SPI_SCK     ; 1.000        ; 0.000      ; 9.000      ;
++---------+---------------+---------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Setup: 'button_3'                                                                                       ;
++---------+------------+------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node  ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+------------+------------+--------------+-------------+--------------+------------+------------+
+; -12.000 ; enable_out ; enable_out ; button_3     ; button_3    ; 1.000        ; 0.000      ; 9.000      ;
++---------+------------+------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Hold: 'CLK14M'                                                                                                ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node      ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; 5.000 ; reg_7ffd[4]    ; reg_7ffd[4]    ; CLK14M       ; CLK14M      ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; clk_div_cnt[0] ; clk_div_cnt[0] ; CLK14M       ; CLK14M      ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; clk_div_cnt[1] ; clk_div_cnt[1] ; CLK14M       ; CLK14M      ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; clk_div_cnt[0] ; clk_div_cnt[1] ; CLK14M       ; CLK14M      ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; clk_div_cnt[2] ; clk_div_cnt[2] ; CLK14M       ; CLK14M      ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; clk_div_cnt[1] ; clk_div_cnt[2] ; CLK14M       ; CLK14M      ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; clk_div_cnt[0] ; clk_div_cnt[2] ; CLK14M       ; CLK14M      ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; reg_7ffd[7]    ; reg_7ffd[7]    ; CLK14M       ; CLK14M      ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; reg_7ffd[6]    ; reg_7ffd[6]    ; CLK14M       ; CLK14M      ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; reg_7ffd[5]    ; reg_7ffd[5]    ; CLK14M       ; CLK14M      ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; reg_7ffd[3]    ; reg_7ffd[3]    ; CLK14M       ; CLK14M      ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; reg_7ffd[2]    ; reg_7ffd[2]    ; CLK14M       ; CLK14M      ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; reg_7ffd[1]    ; reg_7ffd[1]    ; CLK14M       ; CLK14M      ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; reg_7ffd[0]    ; reg_7ffd[0]    ; CLK14M       ; CLK14M      ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; pre_beeper     ; pre_beeper     ; CLK14M       ; CLK14M      ; 0.000        ; 0.000      ; 9.000      ;
+; 5.500 ; spi_config[7]  ; kb_read        ; SPI_SCK      ; CLK14M      ; -0.500       ; 0.000      ; 9.000      ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Hold: 'SPI_SCK'                                                                                             ;
++-------+---------------+---------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node     ; To Node       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------+---------------+--------------+-------------+--------------+------------+------------+
+; 5.000 ; spi_mouse[0]  ; spi_mouse[0]  ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[1]  ; spi_mouse[1]  ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[0]  ; spi_mouse[1]  ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[2]  ; spi_mouse[2]  ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[1]  ; spi_mouse[2]  ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[3]  ; spi_mouse[3]  ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[2]  ; spi_mouse[3]  ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[4]  ; spi_mouse[4]  ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[3]  ; spi_mouse[4]  ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[5]  ; spi_mouse[5]  ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[4]  ; spi_mouse[5]  ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[6]  ; spi_mouse[6]  ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[5]  ; spi_mouse[6]  ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[7]  ; spi_mouse[7]  ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[6]  ; spi_mouse[7]  ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[8]  ; spi_mouse[8]  ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[7]  ; spi_mouse[8]  ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[9]  ; spi_mouse[9]  ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[8]  ; spi_mouse[9]  ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[10] ; spi_mouse[10] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[9]  ; spi_mouse[10] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[11] ; spi_mouse[11] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[10] ; spi_mouse[11] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[12] ; spi_mouse[12] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[11] ; spi_mouse[12] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[13] ; spi_mouse[13] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[12] ; spi_mouse[13] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[14] ; spi_mouse[14] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[13] ; spi_mouse[14] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[15] ; spi_mouse[15] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[14] ; spi_mouse[15] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[16] ; spi_mouse[16] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[15] ; spi_mouse[16] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[17] ; spi_mouse[17] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[16] ; spi_mouse[17] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[18] ; spi_mouse[18] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[17] ; spi_mouse[18] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[19] ; spi_mouse[19] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[18] ; spi_mouse[19] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[20] ; spi_mouse[20] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[19] ; spi_mouse[20] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_config[0] ; spi_config[0] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[0]    ; spi_kbd[0]    ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[21] ; spi_mouse[21] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[20] ; spi_mouse[21] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[22] ; spi_mouse[22] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[21] ; spi_mouse[22] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[23] ; spi_mouse[23] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_mouse[22] ; spi_mouse[23] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_config[1] ; spi_config[1] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_config[0] ; spi_config[1] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[1]    ; spi_kbd[1]    ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[0]    ; spi_kbd[1]    ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_config[2] ; spi_config[2] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_config[1] ; spi_config[2] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[2]    ; spi_kbd[2]    ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[1]    ; spi_kbd[2]    ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_config[3] ; spi_config[3] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_config[2] ; spi_config[3] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[3]    ; spi_kbd[3]    ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[2]    ; spi_kbd[3]    ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_config[4] ; spi_config[4] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_config[3] ; spi_config[4] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[4]    ; spi_kbd[4]    ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[3]    ; spi_kbd[4]    ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_config[5] ; spi_config[5] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_config[4] ; spi_config[5] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[5]    ; spi_kbd[5]    ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[4]    ; spi_kbd[5]    ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_config[6] ; spi_config[6] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_config[5] ; spi_config[6] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[6]    ; spi_kbd[6]    ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[5]    ; spi_kbd[6]    ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_config[7] ; spi_config[7] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_config[6] ; spi_config[7] ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[7]    ; spi_kbd[7]    ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[6]    ; spi_kbd[7]    ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[8]    ; spi_kbd[8]    ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[7]    ; spi_kbd[8]    ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[9]    ; spi_kbd[9]    ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[8]    ; spi_kbd[9]    ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[10]   ; spi_kbd[10]   ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[9]    ; spi_kbd[10]   ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[11]   ; spi_kbd[11]   ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[10]   ; spi_kbd[11]   ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[12]   ; spi_kbd[12]   ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[11]   ; spi_kbd[12]   ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[13]   ; spi_kbd[13]   ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[12]   ; spi_kbd[13]   ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[14]   ; spi_kbd[14]   ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[13]   ; spi_kbd[14]   ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[15]   ; spi_kbd[15]   ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[14]   ; spi_kbd[15]   ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[16]   ; spi_kbd[16]   ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[15]   ; spi_kbd[16]   ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[17]   ; spi_kbd[17]   ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[16]   ; spi_kbd[17]   ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[18]   ; spi_kbd[18]   ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[17]   ; spi_kbd[18]   ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; spi_kbd[19]   ; spi_kbd[19]   ; SPI_SCK      ; SPI_SCK     ; 0.000        ; 0.000      ; 9.000      ;
++-------+---------------+---------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Hold: 'button_3'                                                                                      ;
++-------+------------+------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node  ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------+------------+--------------+-------------+--------------+------------+------------+
+; 5.000 ; enable_out ; enable_out ; button_3     ; button_3    ; 0.000        ; 0.000      ; 9.000      ;
++-------+------------+------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'SPI_SCK'                                                                   ;
++--------+--------------+----------------+------------------+---------+------------+---------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock   ; Clock Edge ; Target        ;
++--------+--------------+----------------+------------------+---------+------------+---------------+
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_config[0] ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_config[0] ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_config[1] ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_config[1] ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_config[2] ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_config[2] ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_config[3] ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_config[3] ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_config[4] ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_config[4] ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_config[5] ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_config[5] ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_config[6] ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_config[6] ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_config[7] ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_config[7] ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[0]    ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[0]    ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[10]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[10]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[11]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[11]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[12]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[12]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[13]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[13]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[14]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[14]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[15]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[15]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[16]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[16]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[17]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[17]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[18]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[18]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[19]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[19]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[1]    ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[1]    ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[20]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[20]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[21]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[21]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[22]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[22]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[23]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[23]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[24]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[24]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[25]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[25]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[26]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[26]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[27]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[27]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[28]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[28]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[29]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[29]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[2]    ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[2]    ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[30]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[30]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[31]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[31]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[32]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[32]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[33]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[33]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[34]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[34]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[35]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[35]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[36]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[36]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[37]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[37]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[38]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[38]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[39]   ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[39]   ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[3]    ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[3]    ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[4]    ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[4]    ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[5]    ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[5]    ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[6]    ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[6]    ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[7]    ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[7]    ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[8]    ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[8]    ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_kbd[9]    ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_kbd[9]    ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_mouse[0]  ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_mouse[0]  ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; SPI_SCK ; Rise       ; spi_mouse[10] ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; SPI_SCK ; Rise       ; spi_mouse[10] ;
++--------+--------------+----------------+------------------+---------+------------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'CLK14M'                                                                              ;
++--------+--------------+----------------+------------------+--------+------------+--------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                   ;
++--------+--------------+----------------+------------------+--------+------------+--------------------------+
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; CLK14M ; Fall       ; clk_div_cnt[0]           ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; CLK14M ; Fall       ; clk_div_cnt[0]           ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; CLK14M ; Fall       ; clk_div_cnt[1]           ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; CLK14M ; Fall       ; clk_div_cnt[1]           ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; CLK14M ; Fall       ; clk_div_cnt[2]           ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; CLK14M ; Fall       ; clk_div_cnt[2]           ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; CLK14M ; Fall       ; kb_read                  ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; CLK14M ; Fall       ; kb_read                  ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; CLK14M ; Fall       ; pre_beeper               ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; CLK14M ; Fall       ; pre_beeper               ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; CLK14M ; Fall       ; reg_7ffd[0]              ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; CLK14M ; Fall       ; reg_7ffd[0]              ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; CLK14M ; Fall       ; reg_7ffd[1]              ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; CLK14M ; Fall       ; reg_7ffd[1]              ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; CLK14M ; Fall       ; reg_7ffd[2]              ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; CLK14M ; Fall       ; reg_7ffd[2]              ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; CLK14M ; Fall       ; reg_7ffd[3]              ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; CLK14M ; Fall       ; reg_7ffd[3]              ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; CLK14M ; Fall       ; reg_7ffd[4]              ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; CLK14M ; Fall       ; reg_7ffd[4]              ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; CLK14M ; Fall       ; reg_7ffd[5]              ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; CLK14M ; Fall       ; reg_7ffd[5]              ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; CLK14M ; Fall       ; reg_7ffd[6]              ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; CLK14M ; Fall       ; reg_7ffd[6]              ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; CLK14M ; Fall       ; reg_7ffd[7]              ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; CLK14M ; Fall       ; reg_7ffd[7]              ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; CLK14M ; Fall       ; reg_7ffd_read            ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; CLK14M ; Fall       ; reg_7ffd_read            ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; CLK14M ; Fall       ; reg_kemston_mouse_b      ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; CLK14M ; Fall       ; reg_kemston_mouse_b      ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; CLK14M ; Fall       ; reg_kemston_mouse_x      ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; CLK14M ; Fall       ; reg_kemston_mouse_x      ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; CLK14M ; Fall       ; reg_kemston_mouse_y      ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; CLK14M ; Fall       ; reg_kemston_mouse_y      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK14M ; Rise       ; CLK14M|dataout           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK14M ; Rise       ; CLK14M|dataout           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK14M ; Rise       ; clk_div_cnt[0]|[0]       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK14M ; Rise       ; clk_div_cnt[0]|[0]       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK14M ; Rise       ; clk_div_cnt[1]|[1]       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK14M ; Rise       ; clk_div_cnt[1]|[1]       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK14M ; Rise       ; clk_div_cnt[2]|[2]       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK14M ; Rise       ; clk_div_cnt[2]|[2]       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK14M ; Rise       ; kb_read|[4]              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK14M ; Rise       ; kb_read|[4]              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK14M ; Rise       ; pre_beeper|[12]          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK14M ; Rise       ; pre_beeper|[12]          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK14M ; Rise       ; reg_7ffd[0]|[20]         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK14M ; Rise       ; reg_7ffd[0]|[20]         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK14M ; Rise       ; reg_7ffd[1]|[20]         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK14M ; Rise       ; reg_7ffd[1]|[20]         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK14M ; Rise       ; reg_7ffd[2]|[20]         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK14M ; Rise       ; reg_7ffd[2]|[20]         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK14M ; Rise       ; reg_7ffd[3]|[20]         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK14M ; Rise       ; reg_7ffd[3]|[20]         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK14M ; Rise       ; reg_7ffd[4]|[20]         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK14M ; Rise       ; reg_7ffd[4]|[20]         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK14M ; Rise       ; reg_7ffd[5]|[20]         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK14M ; Rise       ; reg_7ffd[5]|[20]         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK14M ; Rise       ; reg_7ffd[6]|[20]         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK14M ; Rise       ; reg_7ffd[6]|[20]         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK14M ; Rise       ; reg_7ffd[7]|[20]         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK14M ; Rise       ; reg_7ffd[7]|[20]         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK14M ; Rise       ; reg_7ffd_read|[18]       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK14M ; Rise       ; reg_7ffd_read|[18]       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK14M ; Rise       ; reg_kemston_mouse_b|[18] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK14M ; Rise       ; reg_kemston_mouse_b|[18] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK14M ; Rise       ; reg_kemston_mouse_x|[18] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK14M ; Rise       ; reg_kemston_mouse_x|[18] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK14M ; Rise       ; reg_kemston_mouse_y|[18] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK14M ; Rise       ; reg_kemston_mouse_y|[18] ;
++--------+--------------+----------------+------------------+--------+------------+--------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'button_3'                                                                      ;
++--------+--------------+----------------+------------------+----------+------------+------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target           ;
++--------+--------------+----------------+------------------+----------+------------+------------------+
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; button_3 ; Fall       ; enable_out       ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; button_3 ; Fall       ; enable_out       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button_3 ; Rise       ; button_3|dataout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button_3 ; Rise       ; button_3|dataout ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button_3 ; Rise       ; enable_out|[0]   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button_3 ; Rise       ; enable_out|[0]   ;
++--------+--------------+----------------+------------------+----------+------------+------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; ADR[*]    ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[0]   ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[1]   ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[2]   ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[3]   ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[4]   ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[5]   ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[6]   ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[7]   ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[8]   ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[9]   ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[10]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[11]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[12]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[13]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[14]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[15]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+; DATA[*]   ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  DATA[0]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  DATA[1]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  DATA[2]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  DATA[3]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  DATA[4]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  DATA[5]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  DATA[6]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  DATA[7]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+; IORQ      ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+; RD        ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+; WR        ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+; SPI_A[*]  ; SPI_SCK    ; 4.000 ; 4.000 ; Rise       ; SPI_SCK         ;
+;  SPI_A[0] ; SPI_SCK    ; 4.000 ; 4.000 ; Rise       ; SPI_SCK         ;
+;  SPI_A[1] ; SPI_SCK    ; 4.000 ; 4.000 ; Rise       ; SPI_SCK         ;
+; SPI_MOSI  ; SPI_SCK    ; 4.000 ; 4.000 ; Rise       ; SPI_SCK         ;
+; SPI_NSS   ; SPI_SCK    ; 4.000 ; 4.000 ; Rise       ; SPI_SCK         ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; ADR[*]    ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[0]   ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[1]   ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[2]   ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[3]   ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[4]   ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[5]   ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[6]   ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[7]   ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[8]   ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[9]   ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[10]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[11]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[12]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[13]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[14]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  ADR[15]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+; DATA[*]   ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  DATA[0]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  DATA[1]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  DATA[2]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  DATA[3]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  DATA[4]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  DATA[5]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  DATA[6]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+;  DATA[7]  ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+; IORQ      ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+; RD        ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+; WR        ; CLK14M     ; 4.000 ; 4.000 ; Fall       ; CLK14M          ;
+; SPI_A[*]  ; SPI_SCK    ; 4.000 ; 4.000 ; Rise       ; SPI_SCK         ;
+;  SPI_A[0] ; SPI_SCK    ; 4.000 ; 4.000 ; Rise       ; SPI_SCK         ;
+;  SPI_A[1] ; SPI_SCK    ; 4.000 ; 4.000 ; Rise       ; SPI_SCK         ;
+; SPI_MOSI  ; SPI_SCK    ; 4.000 ; 4.000 ; Rise       ; SPI_SCK         ;
+; SPI_NSS   ; SPI_SCK    ; 4.000 ; 4.000 ; Rise       ; SPI_SCK         ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; BEEP      ; CLK14M     ; 15.000 ; 15.000 ; Fall       ; CLK14M          ;
+; CLK1_75   ; CLK14M     ; 15.000 ; 15.000 ; Fall       ; CLK14M          ;
+; DATA[*]   ; CLK14M     ; 24.000 ; 24.000 ; Fall       ; CLK14M          ;
+;  DATA[0]  ; CLK14M     ; 24.000 ; 24.000 ; Fall       ; CLK14M          ;
+;  DATA[1]  ; CLK14M     ; 24.000 ; 24.000 ; Fall       ; CLK14M          ;
+;  DATA[2]  ; CLK14M     ; 24.000 ; 24.000 ; Fall       ; CLK14M          ;
+;  DATA[3]  ; CLK14M     ; 24.000 ; 24.000 ; Fall       ; CLK14M          ;
+;  DATA[4]  ; CLK14M     ; 24.000 ; 24.000 ; Fall       ; CLK14M          ;
+;  DATA[5]  ; CLK14M     ; 24.000 ; 24.000 ; Fall       ; CLK14M          ;
+;  DATA[6]  ; CLK14M     ; 24.000 ; 24.000 ; Fall       ; CLK14M          ;
+;  DATA[7]  ; CLK14M     ; 24.000 ; 24.000 ; Fall       ; CLK14M          ;
+; IORQGE    ; CLK14M     ; 24.000 ; 24.000 ; Fall       ; CLK14M          ;
+; DATA[*]   ; SPI_SCK    ; 24.000 ; 24.000 ; Rise       ; SPI_SCK         ;
+;  DATA[0]  ; SPI_SCK    ; 24.000 ; 24.000 ; Rise       ; SPI_SCK         ;
+;  DATA[1]  ; SPI_SCK    ; 24.000 ; 24.000 ; Rise       ; SPI_SCK         ;
+;  DATA[2]  ; SPI_SCK    ; 24.000 ; 24.000 ; Rise       ; SPI_SCK         ;
+;  DATA[3]  ; SPI_SCK    ; 24.000 ; 24.000 ; Rise       ; SPI_SCK         ;
+;  DATA[4]  ; SPI_SCK    ; 24.000 ; 24.000 ; Rise       ; SPI_SCK         ;
+;  DATA[5]  ; SPI_SCK    ; 24.000 ; 24.000 ; Rise       ; SPI_SCK         ;
+;  DATA[6]  ; SPI_SCK    ; 24.000 ; 24.000 ; Rise       ; SPI_SCK         ;
+;  DATA[7]  ; SPI_SCK    ; 24.000 ; 24.000 ; Rise       ; SPI_SCK         ;
+; DBG_PIN   ; SPI_SCK    ; 15.000 ; 15.000 ; Rise       ; SPI_SCK         ;
+; led       ; button_3   ; 15.000 ; 15.000 ; Fall       ; button_3        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; BEEP      ; CLK14M     ; 15.000 ; 15.000 ; Fall       ; CLK14M          ;
+; CLK1_75   ; CLK14M     ; 15.000 ; 15.000 ; Fall       ; CLK14M          ;
+; DATA[*]   ; CLK14M     ; 24.000 ; 24.000 ; Fall       ; CLK14M          ;
+;  DATA[0]  ; CLK14M     ; 24.000 ; 24.000 ; Fall       ; CLK14M          ;
+;  DATA[1]  ; CLK14M     ; 24.000 ; 24.000 ; Fall       ; CLK14M          ;
+;  DATA[2]  ; CLK14M     ; 24.000 ; 24.000 ; Fall       ; CLK14M          ;
+;  DATA[3]  ; CLK14M     ; 24.000 ; 24.000 ; Fall       ; CLK14M          ;
+;  DATA[4]  ; CLK14M     ; 24.000 ; 24.000 ; Fall       ; CLK14M          ;
+;  DATA[5]  ; CLK14M     ; 24.000 ; 24.000 ; Fall       ; CLK14M          ;
+;  DATA[6]  ; CLK14M     ; 24.000 ; 24.000 ; Fall       ; CLK14M          ;
+;  DATA[7]  ; CLK14M     ; 24.000 ; 24.000 ; Fall       ; CLK14M          ;
+; IORQGE    ; CLK14M     ; 24.000 ; 24.000 ; Fall       ; CLK14M          ;
+; DATA[*]   ; SPI_SCK    ; 24.000 ; 24.000 ; Rise       ; SPI_SCK         ;
+;  DATA[0]  ; SPI_SCK    ; 24.000 ; 24.000 ; Rise       ; SPI_SCK         ;
+;  DATA[1]  ; SPI_SCK    ; 24.000 ; 24.000 ; Rise       ; SPI_SCK         ;
+;  DATA[2]  ; SPI_SCK    ; 24.000 ; 24.000 ; Rise       ; SPI_SCK         ;
+;  DATA[3]  ; SPI_SCK    ; 24.000 ; 24.000 ; Rise       ; SPI_SCK         ;
+;  DATA[4]  ; SPI_SCK    ; 24.000 ; 24.000 ; Rise       ; SPI_SCK         ;
+;  DATA[5]  ; SPI_SCK    ; 24.000 ; 24.000 ; Rise       ; SPI_SCK         ;
+;  DATA[6]  ; SPI_SCK    ; 24.000 ; 24.000 ; Rise       ; SPI_SCK         ;
+;  DATA[7]  ; SPI_SCK    ; 24.000 ; 24.000 ; Rise       ; SPI_SCK         ;
+; DBG_PIN   ; SPI_SCK    ; 15.000 ; 15.000 ; Rise       ; SPI_SCK         ;
+; led       ; button_3   ; 15.000 ; 15.000 ; Fall       ; button_3        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------+
+; Propagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; ADR[1]     ; BC1         ;        ; 15.000 ; 15.000 ;        ;
+; ADR[1]     ; BDIR        ;        ; 15.000 ; 15.000 ;        ;
+; ADR[13]    ; BC1         ; 15.000 ;        ;        ; 15.000 ;
+; ADR[13]    ; BDIR        ; 15.000 ;        ;        ; 15.000 ;
+; ADR[14]    ; BC1         ; 15.000 ;        ;        ; 15.000 ;
+; ADR[15]    ; BC1         ; 15.000 ;        ;        ; 15.000 ;
+; ADR[15]    ; BDIR        ; 15.000 ;        ;        ; 15.000 ;
+; IORQ       ; BC1         ;        ; 15.000 ; 15.000 ;        ;
+; IORQ       ; BDIR        ;        ; 15.000 ; 15.000 ;        ;
+; IORQ       ; IORQGE      ;        ; 15.000 ; 15.000 ;        ;
+; M1         ; BC1         ; 15.000 ;        ;        ; 15.000 ;
+; WR         ; BDIR        ;        ; 15.000 ; 15.000 ;        ;
++------------+-------------+--------+--------+--------+--------+
+
+
++--------------------------------------------------------------+
+; Minimum Propagation Delay                                    ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; ADR[1]     ; BC1         ;        ; 15.000 ; 15.000 ;        ;
+; ADR[1]     ; BDIR        ;        ; 15.000 ; 15.000 ;        ;
+; ADR[13]    ; BC1         ; 15.000 ;        ;        ; 15.000 ;
+; ADR[13]    ; BDIR        ; 15.000 ;        ;        ; 15.000 ;
+; ADR[14]    ; BC1         ; 15.000 ;        ;        ; 15.000 ;
+; ADR[15]    ; BC1         ; 15.000 ;        ;        ; 15.000 ;
+; ADR[15]    ; BDIR        ; 15.000 ;        ;        ; 15.000 ;
+; IORQ       ; BC1         ;        ; 15.000 ; 15.000 ;        ;
+; IORQ       ; BDIR        ;        ; 15.000 ; 15.000 ;        ;
+; IORQ       ; IORQGE      ;        ; 15.000 ; 15.000 ;        ;
+; M1         ; BC1         ; 15.000 ;        ;        ; 15.000 ;
+; WR         ; BDIR        ;        ; 15.000 ; 15.000 ;        ;
++------------+-------------+--------+--------+--------+--------+
+
+
++-----------------------------------------------------------------------+
+; Output Enable Times                                                   ;
++-----------+------------+--------+------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+------+------------+-----------------+
+; DATA[*]   ; CLK14M     ; 31.000 ;      ; Fall       ; CLK14M          ;
+;  DATA[0]  ; CLK14M     ; 31.000 ;      ; Fall       ; CLK14M          ;
+;  DATA[1]  ; CLK14M     ; 31.000 ;      ; Fall       ; CLK14M          ;
+;  DATA[2]  ; CLK14M     ; 31.000 ;      ; Fall       ; CLK14M          ;
+;  DATA[3]  ; CLK14M     ; 31.000 ;      ; Fall       ; CLK14M          ;
+;  DATA[4]  ; CLK14M     ; 31.000 ;      ; Fall       ; CLK14M          ;
+;  DATA[5]  ; CLK14M     ; 31.000 ;      ; Fall       ; CLK14M          ;
+;  DATA[6]  ; CLK14M     ; 31.000 ;      ; Fall       ; CLK14M          ;
+;  DATA[7]  ; CLK14M     ; 31.000 ;      ; Fall       ; CLK14M          ;
++-----------+------------+--------+------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Output Enable Times                                           ;
++-----------+------------+--------+------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+------+------------+-----------------+
+; DATA[*]   ; CLK14M     ; 31.000 ;      ; Fall       ; CLK14M          ;
+;  DATA[0]  ; CLK14M     ; 31.000 ;      ; Fall       ; CLK14M          ;
+;  DATA[1]  ; CLK14M     ; 31.000 ;      ; Fall       ; CLK14M          ;
+;  DATA[2]  ; CLK14M     ; 31.000 ;      ; Fall       ; CLK14M          ;
+;  DATA[3]  ; CLK14M     ; 31.000 ;      ; Fall       ; CLK14M          ;
+;  DATA[4]  ; CLK14M     ; 31.000 ;      ; Fall       ; CLK14M          ;
+;  DATA[5]  ; CLK14M     ; 31.000 ;      ; Fall       ; CLK14M          ;
+;  DATA[6]  ; CLK14M     ; 31.000 ;      ; Fall       ; CLK14M          ;
+;  DATA[7]  ; CLK14M     ; 31.000 ;      ; Fall       ; CLK14M          ;
++-----------+------------+--------+------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Output Disable Times                                                          ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; DATA[*]   ; CLK14M     ; 31.000    ;           ; Fall       ; CLK14M          ;
+;  DATA[0]  ; CLK14M     ; 31.000    ;           ; Fall       ; CLK14M          ;
+;  DATA[1]  ; CLK14M     ; 31.000    ;           ; Fall       ; CLK14M          ;
+;  DATA[2]  ; CLK14M     ; 31.000    ;           ; Fall       ; CLK14M          ;
+;  DATA[3]  ; CLK14M     ; 31.000    ;           ; Fall       ; CLK14M          ;
+;  DATA[4]  ; CLK14M     ; 31.000    ;           ; Fall       ; CLK14M          ;
+;  DATA[5]  ; CLK14M     ; 31.000    ;           ; Fall       ; CLK14M          ;
+;  DATA[6]  ; CLK14M     ; 31.000    ;           ; Fall       ; CLK14M          ;
+;  DATA[7]  ; CLK14M     ; 31.000    ;           ; Fall       ; CLK14M          ;
++-----------+------------+-----------+-----------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Minimum Output Disable Times                                                  ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; DATA[*]   ; CLK14M     ; 31.000    ;           ; Fall       ; CLK14M          ;
+;  DATA[0]  ; CLK14M     ; 31.000    ;           ; Fall       ; CLK14M          ;
+;  DATA[1]  ; CLK14M     ; 31.000    ;           ; Fall       ; CLK14M          ;
+;  DATA[2]  ; CLK14M     ; 31.000    ;           ; Fall       ; CLK14M          ;
+;  DATA[3]  ; CLK14M     ; 31.000    ;           ; Fall       ; CLK14M          ;
+;  DATA[4]  ; CLK14M     ; 31.000    ;           ; Fall       ; CLK14M          ;
+;  DATA[5]  ; CLK14M     ; 31.000    ;           ; Fall       ; CLK14M          ;
+;  DATA[6]  ; CLK14M     ; 31.000    ;           ; Fall       ; CLK14M          ;
+;  DATA[7]  ; CLK14M     ; 31.000    ;           ; Fall       ; CLK14M          ;
++-----------+------------+-----------+-----------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; button_3   ; button_3 ; 0        ; 0        ; 0        ; 1        ;
+; CLK14M     ; CLK14M   ; 0        ; 0        ; 0        ; 33       ;
+; SPI_SCK    ; CLK14M   ; 0        ; 0        ; 1        ; 0        ;
+; SPI_SCK    ; SPI_SCK  ; 354      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; button_3   ; button_3 ; 0        ; 0        ; 0        ; 1        ;
+; CLK14M     ; CLK14M   ; 0        ; 0        ; 0        ; 33       ;
+; SPI_SCK    ; CLK14M   ; 0        ; 0        ; 1        ; 0        ;
+; SPI_SCK    ; SPI_SCK  ; 354      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 32    ; 32   ;
+; Unconstrained Input Port Paths  ; 469   ; 469  ;
+; Unconstrained Output Ports      ; 15    ; 15   ;
+; Unconstrained Output Port Paths ; 81    ; 81   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Oct 06 00:55:05 2021
+Info: Command: quartus_sta ay_verilog_probe -c ay_verilog_probe
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Warning (335095): TimeQuest Timing Analyzer does not support the analysis of latches as synchronous elements for the currently selected device family.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'ay_verilog_probe.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLK14M CLK14M
+    Info (332105): create_clock -period 1.000 -name SPI_SCK SPI_SCK
+    Info (332105): create_clock -period 1.000 -name button_3 button_3
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -12.500
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -12.500      -156.500 CLK14M 
+    Info (332119):   -12.000      -864.000 SPI_SCK 
+    Info (332119):   -12.000       -12.000 button_3 
+Info (332146): Worst-case hold slack is 5.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     5.000         0.000 CLK14M 
+    Info (332119):     5.000         0.000 SPI_SCK 
+    Info (332119):     5.000         0.000 button_3 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -5.500
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -5.500      -792.000 SPI_SCK 
+    Info (332119):    -5.500      -187.000 CLK14M 
+    Info (332119):    -5.500       -11.000 button_3 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4507 megabytes
+    Info: Processing ended: Wed Oct 06 00:55:06 2021
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

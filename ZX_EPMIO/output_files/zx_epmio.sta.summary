@@ -1,0 +1,65 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'SPI_A[0]'
+Slack : -9.600
+TNS   : -287.600
+
+Type  : Setup 'SPI_A[1]'
+Slack : -9.600
+TNS   : -287.600
+
+Type  : Setup 'SPI_NSS'
+Slack : -9.600
+TNS   : -287.600
+
+Type  : Setup 'SPI_SCK'
+Slack : -9.600
+TNS   : -287.600
+
+Type  : Setup 'CLK'
+Slack : -9.500
+TNS   : -76.000
+
+Type  : Hold 'CLK'
+Slack : 6.400
+TNS   : 0.000
+
+Type  : Hold 'SPI_A[0]'
+Slack : 6.400
+TNS   : 0.000
+
+Type  : Hold 'SPI_A[1]'
+Slack : 6.400
+TNS   : 0.000
+
+Type  : Hold 'SPI_NSS'
+Slack : 6.400
+TNS   : 0.000
+
+Type  : Hold 'SPI_SCK'
+Slack : 6.400
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'SPI_A[0]'
+Slack : -3.500
+TNS   : -231.000
+
+Type  : Minimum Pulse Width 'SPI_A[1]'
+Slack : -3.500
+TNS   : -231.000
+
+Type  : Minimum Pulse Width 'SPI_NSS'
+Slack : -3.500
+TNS   : -231.000
+
+Type  : Minimum Pulse Width 'SPI_SCK'
+Slack : -3.500
+TNS   : -231.000
+
+Type  : Minimum Pulse Width 'CLK'
+Slack : -3.500
+TNS   : -56.000
+
+------------------------------------------------------------

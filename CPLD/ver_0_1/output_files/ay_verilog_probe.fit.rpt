@@ -1,0 +1,676 @@
+Fitter report for ay_verilog_probe
+Wed Oct 06 00:55:03 2021
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Fitter Summary
+  3. Fitter Settings
+  4. Parallel Compilation
+  5. Pin-Out File
+  6. Fitter Resource Usage Summary
+  7. Input Pins
+  8. Output Pins
+  9. Bidir Pins
+ 10. All Package Pins
+ 11. Output Pin Default Load For Reported TCO
+ 12. Fitter Resource Utilization by Entity
+ 13. Control Signals
+ 14. Non-Global High Fan-Out Signals
+ 15. Other Routing Usage Summary
+ 16. LAB External Interconnect
+ 17. LAB Macrocells
+ 18. Logic Cell Interconnection
+ 19. Fitter Device Options
+ 20. Fitter Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Fitter Summary                                                              ;
++---------------------------+-------------------------------------------------+
+; Fitter Status             ; Successful - Wed Oct 06 00:55:03 2021           ;
+; Quartus II 64-Bit Version ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name             ; ay_verilog_probe                                ;
+; Top-level Entity Name     ; ay_verilog_probe                                ;
+; Family                    ; MAX7000S                                        ;
+; Device                    ; EPM7128STC100-15                                ;
+; Timing Models             ; Final                                           ;
+; Total macrocells          ; 103 / 128 ( 80 % )                              ;
+; Total pins                ; 50 / 84 ( 60 % )                                ;
++---------------------------+-------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Fitter Settings                                                                                               ;
++----------------------------------------------------------------------------+------------------+---------------+
+; Option                                                                     ; Setting          ; Default Value ;
++----------------------------------------------------------------------------+------------------+---------------+
+; Device                                                                     ; EPM7128STC100-15 ;               ;
+; Use smart compilation                                                      ; Off              ; Off           ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On               ; On            ;
+; Enable compact report table                                                ; Off              ; Off           ;
+; Optimize Multi-Corner Timing                                               ; Off              ; Off           ;
+; Optimize Timing for ECOs                                                   ; Off              ; Off           ;
+; Regenerate full fit report during ECO compiles                             ; Off              ; Off           ;
+; Optimize IOC Register Placement for Timing                                 ; Normal           ; Normal        ;
+; Fitter Initial Placement Seed                                              ; 1                ; 1             ;
+; Slow Slew Rate                                                             ; Off              ; Off           ;
+; Fitter Effort                                                              ; Auto Fit         ; Auto Fit      ;
+; Force Fitter to Avoid Periphery Placement Warnings                         ; Off              ; Off           ;
++----------------------------------------------------------------------------+------------------+---------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------+
+; Pin-Out File ;
++--------------+
+The pin-out file can be found in C:/Users/union/Documents/Projects/Speccy/Pentagon/PentagonExpander/CPLD/ver_0_1/output_files/ay_verilog_probe.pin.
+
+
++---------------------------------------------------+
+; Fitter Resource Usage Summary                     ;
++------------------------------+--------------------+
+; Resource                     ; Usage              ;
++------------------------------+--------------------+
+; Logic cells                  ; 103 / 128 ( 80 % ) ;
+; Registers                    ; 90 / 128 ( 70 % )  ;
+; Number of pterms used        ; 295                ;
+; I/O pins                     ; 50 / 84 ( 60 % )   ;
+;     -- Clock pins            ; 0 / 2 ( 0 % )      ;
+;     -- Dedicated input pins  ; 0 / 2 ( 0 % )      ;
+;                              ;                    ;
+; Global signals               ; 0                  ;
+; Shareable expanders          ; 0 / 128 ( 0 % )    ;
+; Parallel expanders           ; 0 / 120 ( 0 % )    ;
+; Cells using turbo bit        ; 103 / 128 ( 80 % ) ;
+; Maximum fan-out              ; 72                 ;
+; Highest non-global fan-out   ; 72                 ;
+; Total fan-out                ; 806                ;
+; Average fan-out              ; 5.27               ;
++------------------------------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                                     ;
++----------+-------+----------+-----+-----------------------+--------------------+--------+----------------+--------------+----------------------+
+; Name     ; Pin # ; I/O Bank ; LAB ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; I/O Standard ; Location assigned by ;
++----------+-------+----------+-----+-----------------------+--------------------+--------+----------------+--------------+----------------------+
+; ADR[0]   ; 13    ; --       ; 2   ; 14                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; ADR[10]  ; 17    ; --       ; 3   ; 12                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; ADR[11]  ; 19    ; --       ; 3   ; 12                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; ADR[12]  ; 20    ; --       ; 3   ; 12                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; ADR[13]  ; 21    ; --       ; 3   ; 14                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; ADR[14]  ; 22    ; --       ; 3   ; 13                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; ADR[15]  ; 23    ; --       ; 3   ; 14                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; ADR[1]   ; 12    ; --       ; 2   ; 15                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; ADR[2]   ; 10    ; --       ; 2   ; 13                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; ADR[3]   ; 9     ; --       ; 2   ; 13                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; ADR[4]   ; 8     ; --       ; 2   ; 13                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; ADR[5]   ; 7     ; --       ; 2   ; 13                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; ADR[6]   ; 6     ; --       ; 2   ; 13                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; ADR[7]   ; 5     ; --       ; 2   ; 13                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; ADR[8]   ; 14    ; --       ; 2   ; 12                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; ADR[9]   ; 16    ; --       ; 3   ; 12                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; CLK      ; 2     ; --       ; 1   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; CLK14M   ; 100   ; --       ; 1   ; 17                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; DOSEN    ; 46    ; --       ; 5   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; IORQ     ; 33    ; --       ; 4   ; 17                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; M1       ; 41    ; --       ; 5   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; RD       ; 37    ; --       ; 4   ; 5                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; SPI_A[0] ; 96    ; --       ; 1   ; 72                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; SPI_A[1] ; 97    ; --       ; 1   ; 72                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; SPI_MOSI ; 94    ; --       ; 1   ; 3                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; SPI_NSS  ; 93    ; --       ; 1   ; 72                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; SPI_SCK  ; 92    ; --       ; 1   ; 72                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; WR       ; 45    ; --       ; 5   ; 10                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; button_3 ; 52    ; --       ; 6   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; button_4 ; 53    ; --       ; 6   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
++----------+-------+----------+-----+-----------------------+--------------------+--------+----------------+--------------+----------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                                 ;
++---------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
+; Name    ; Pin # ; I/O Bank ; LAB ; Output Register ; Slow Slew Rate ; Open Drain ; TRI Primitive ; I/O Standard ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
++---------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
+; BC1     ; 56    ; --       ; 6   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; BDIR    ; 57    ; --       ; 6   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; BEEP    ; 54    ; --       ; 6   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; CLK1_75 ; 55    ; --       ; 6   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; DBG_PIN ; 98    ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; IORQGE  ; 36    ; --       ; 4   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; WAIT    ; 35    ; --       ; 4   ; no              ; no             ; yes        ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; led     ; 99    ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
++---------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Bidir Pins                                                                                                                                                                                                                                          ;
++---------+-------+----------+-----+-----------------------+--------------------+--------+----------------+-----------------+----------------+------------+--------------+----------------------+-------+-----------------------+---------------------+
+; Name    ; Pin # ; I/O Bank ; LAB ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Output Register ; Slow Slew Rate ; Open Drain ; I/O Standard ; Location assigned by ; Load  ; Output Enable Source  ; Output Enable Group ;
++---------+-------+----------+-----+-----------------------+--------------------+--------+----------------+-----------------+----------------+------------+--------------+----------------------+-------+-----------------------+---------------------+
+; DATA[0] ; 32    ; --       ; 4   ; 1                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; DATA[0]~63 (inverted) ; -                   ;
+; DATA[1] ; 31    ; --       ; 4   ; 1                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; DATA[0]~63 (inverted) ; -                   ;
+; DATA[2] ; 30    ; --       ; 4   ; 1                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; DATA[0]~63 (inverted) ; -                   ;
+; DATA[3] ; 29    ; --       ; 4   ; 1                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; DATA[0]~63 (inverted) ; -                   ;
+; DATA[4] ; 28    ; --       ; 4   ; 2                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; DATA[0]~63 (inverted) ; -                   ;
+; DATA[5] ; 27    ; --       ; 4   ; 1                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; DATA[0]~63 (inverted) ; -                   ;
+; DATA[6] ; 25    ; --       ; 3   ; 1                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; DATA[0]~63 (inverted) ; -                   ;
+; DATA[7] ; 24    ; --       ; 3   ; 1                     ; 0                  ; no     ; no             ; no              ; no             ; no         ; TTL          ; User                 ; 10 pF ; DATA[0]~63 (inverted) ; -                   ;
++---------+-------+----------+-----+-----------------------+--------------------+--------+----------------+-----------------+----------------+------------+--------------+----------------------+-------+-----------------------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; All Package Pins                                                                                      ;
++----------+------------+----------+----------------+--------+--------------+---------+-----------------+
+; Location ; Pad Number ; I/O Bank ; Pin Name/Usage ; Dir.   ; I/O Standard ; Voltage ; User Assignment ;
++----------+------------+----------+----------------+--------+--------------+---------+-----------------+
+; 1        ; 12         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 2        ; 13         ; --       ; CLK            ; input  ; TTL          ;         ; Y               ;
+; 3        ; 14         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
+; 4        ; 15         ; --       ; TDI            ; input  ; TTL          ;         ; N               ;
+; 5        ; 16         ; --       ; ADR[7]         ; input  ; TTL          ;         ; Y               ;
+; 6        ; 17         ; --       ; ADR[6]         ; input  ; TTL          ;         ; Y               ;
+; 7        ; 18         ; --       ; ADR[5]         ; input  ; TTL          ;         ; Y               ;
+; 8        ; 19         ; --       ; ADR[4]         ; input  ; TTL          ;         ; Y               ;
+; 9        ; 20         ; --       ; ADR[3]         ; input  ; TTL          ;         ; Y               ;
+; 10       ; 21         ; --       ; ADR[2]         ; input  ; TTL          ;         ; Y               ;
+; 11       ; 22         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 12       ; 23         ; --       ; ADR[1]         ; input  ; TTL          ;         ; Y               ;
+; 13       ; 24         ; --       ; ADR[0]         ; input  ; TTL          ;         ; Y               ;
+; 14       ; 25         ; --       ; ADR[8]         ; input  ; TTL          ;         ; Y               ;
+; 15       ; 26         ; --       ; TMS            ; input  ; TTL          ;         ; N               ;
+; 16       ; 27         ; --       ; ADR[9]         ; input  ; TTL          ;         ; Y               ;
+; 17       ; 28         ; --       ; ADR[10]        ; input  ; TTL          ;         ; Y               ;
+; 18       ; 29         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
+; 19       ; 30         ; --       ; ADR[11]        ; input  ; TTL          ;         ; Y               ;
+; 20       ; 31         ; --       ; ADR[12]        ; input  ; TTL          ;         ; Y               ;
+; 21       ; 32         ; --       ; ADR[13]        ; input  ; TTL          ;         ; Y               ;
+; 22       ; 33         ; --       ; ADR[14]        ; input  ; TTL          ;         ; Y               ;
+; 23       ; 34         ; --       ; ADR[15]        ; input  ; TTL          ;         ; Y               ;
+; 24       ; 35         ; --       ; DATA[7]        ; bidir  ; TTL          ;         ; Y               ;
+; 25       ; 36         ; --       ; DATA[6]        ; bidir  ; TTL          ;         ; Y               ;
+; 26       ; 37         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 27       ; 38         ; --       ; DATA[5]        ; bidir  ; TTL          ;         ; Y               ;
+; 28       ; 39         ; --       ; DATA[4]        ; bidir  ; TTL          ;         ; Y               ;
+; 29       ; 40         ; --       ; DATA[3]        ; bidir  ; TTL          ;         ; Y               ;
+; 30       ; 41         ; --       ; DATA[2]        ; bidir  ; TTL          ;         ; Y               ;
+; 31       ; 42         ; --       ; DATA[1]        ; bidir  ; TTL          ;         ; Y               ;
+; 32       ; 43         ; --       ; DATA[0]        ; bidir  ; TTL          ;         ; Y               ;
+; 33       ; 44         ; --       ; IORQ           ; input  ; TTL          ;         ; Y               ;
+; 34       ; 45         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
+; 35       ; 46         ; --       ; WAIT           ; output ; TTL          ;         ; Y               ;
+; 36       ; 47         ; --       ; IORQGE         ; output ; TTL          ;         ; Y               ;
+; 37       ; 48         ; --       ; RD             ; input  ; TTL          ;         ; Y               ;
+; 38       ; 49         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 39       ; 50         ; --       ; VCCINT         ; power  ;              ; 5.0V    ;                 ;
+; 40       ; 51         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 41       ; 52         ; --       ; M1             ; input  ; TTL          ;         ; Y               ;
+; 42       ; 53         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 43       ; 54         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 44       ; 55         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 45       ; 56         ; --       ; WR             ; input  ; TTL          ;         ; Y               ;
+; 46       ; 57         ; --       ; DOSEN          ; input  ; TTL          ;         ; Y               ;
+; 47       ; 58         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 48       ; 59         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 49       ; 60         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 50       ; 61         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 51       ; 62         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
+; 52       ; 63         ; --       ; button_3       ; input  ; TTL          ;         ; Y               ;
+; 53       ; 64         ; --       ; button_4       ; input  ; TTL          ;         ; Y               ;
+; 54       ; 65         ; --       ; BEEP           ; output ; TTL          ;         ; Y               ;
+; 55       ; 66         ; --       ; CLK1_75        ; output ; TTL          ;         ; Y               ;
+; 56       ; 67         ; --       ; BC1            ; output ; TTL          ;         ; Y               ;
+; 57       ; 68         ; --       ; BDIR           ; output ; TTL          ;         ; Y               ;
+; 58       ; 69         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 59       ; 70         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 60       ; 71         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 61       ; 72         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 62       ; 73         ; --       ; TCK            ; input  ; TTL          ;         ; N               ;
+; 63       ; 74         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 64       ; 75         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 65       ; 76         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 66       ; 77         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
+; 67       ; 78         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 68       ; 79         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 69       ; 80         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 70       ; 81         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 71       ; 82         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 72       ; 83         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 73       ; 84         ; --       ; TDO            ; output ; TTL          ;         ; N               ;
+; 74       ; 85         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 75       ; 86         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 76       ; 87         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 77       ; 88         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 78       ; 89         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 79       ; 90         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 80       ; 91         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 81       ; 92         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 82       ; 93         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
+; 83       ; 94         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 84       ; 95         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 85       ; 96         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 86       ; 97         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 87       ; 98         ; --       ; GND+           ;        ;              ;         ;                 ;
+; 88       ; 99         ; --       ; GND+           ;        ;              ;         ;                 ;
+; 89       ; 0          ; --       ; GND+           ;        ;              ;         ;                 ;
+; 90       ; 1          ; --       ; GND+           ;        ;              ;         ;                 ;
+; 91       ; 2          ; --       ; VCCINT         ; power  ;              ; 5.0V    ;                 ;
+; 92       ; 3          ; --       ; SPI_SCK        ; input  ; TTL          ;         ; Y               ;
+; 93       ; 4          ; --       ; SPI_NSS        ; input  ; TTL          ;         ; Y               ;
+; 94       ; 5          ; --       ; SPI_MOSI       ; input  ; TTL          ;         ; Y               ;
+; 95       ; 6          ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 96       ; 7          ; --       ; SPI_A[0]       ; input  ; TTL          ;         ; Y               ;
+; 97       ; 8          ; --       ; SPI_A[1]       ; input  ; TTL          ;         ; Y               ;
+; 98       ; 9          ; --       ; DBG_PIN        ; output ; TTL          ;         ; Y               ;
+; 99       ; 10         ; --       ; led            ; output ; TTL          ;         ; Y               ;
+; 100      ; 11         ; --       ; CLK14M         ; input  ; TTL          ;         ; Y               ;
++----------+------------+----------+----------------+--------+--------------+---------+-----------------+
+Note: Pin directions (input, output or bidir) are based on device operating in user mode.
+
+
++-----------------------------------------------+
+; Output Pin Default Load For Reported TCO      ;
++--------------+-------+------------------------+
+; I/O Standard ; Load  ; Termination Resistance ;
++--------------+-------+------------------------+
+; 3.3-V LVTTL  ; 10 pF ; Not Available          ;
+; 3.3-V LVCMOS ; 10 pF ; Not Available          ;
+; TTL          ; 10 pF ; Not Available          ;
++--------------+-------+------------------------+
+Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
+
+
++-------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                               ;
++----------------------------+------------+------+---------------------+--------------+
+; Compilation Hierarchy Node ; Macrocells ; Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+------------+------+---------------------+--------------+
+; |ay_verilog_probe          ; 103        ; 50   ; |ay_verilog_probe   ; work         ;
++----------------------------+------------+------+---------------------+--------------+
+
+
++------------------------------------------------------------------------------------------+
+; Control Signals                                                                          ;
++----------+----------+---------+-------+--------+----------------------+------------------+
+; Name     ; Location ; Fan-Out ; Usage ; Global ; Global Resource Used ; Global Line Name ;
++----------+----------+---------+-------+--------+----------------------+------------------+
+; CLK14M   ; PIN_100  ; 17      ; Clock ; no     ; --                   ; --               ;
+; SPI_SCK  ; PIN_92   ; 72      ; Clock ; no     ; --                   ; --               ;
+; button_3 ; PIN_52   ; 1       ; Clock ; no     ; --                   ; --               ;
++----------+----------+---------+-------+--------+----------------------+------------------+
+
+
++---------------------------------+
+; Non-Global High Fan-Out Signals ;
++---------------------+-----------+
+; Name                ; Fan-Out   ;
++---------------------+-----------+
+; SPI_A[1]            ; 72        ;
+; SPI_A[0]            ; 72        ;
+; SPI_NSS             ; 72        ;
+; SPI_SCK             ; 72        ;
+; CLK14M              ; 17        ;
+; IORQ                ; 17        ;
+; ADR[1]              ; 15        ;
+; ADR[15]             ; 14        ;
+; ADR[13]             ; 14        ;
+; ADR[0]              ; 14        ;
+; ADR[14]             ; 13        ;
+; ADR[7]              ; 13        ;
+; ADR[6]              ; 13        ;
+; ADR[5]              ; 13        ;
+; ADR[4]              ; 13        ;
+; ADR[3]              ; 13        ;
+; ADR[2]              ; 13        ;
+; ADR[12]             ; 12        ;
+; ADR[11]             ; 12        ;
+; ADR[10]             ; 12        ;
+; ADR[9]              ; 12        ;
+; ADR[8]              ; 12        ;
+; WR                  ; 10        ;
+; reg_kemston_mouse_x ; 9         ;
+; reg_kemston_mouse_b ; 9         ;
+; reg_kemston_mouse_y ; 9         ;
+; reg_7ffd_read       ; 9         ;
+; DATA[0]~63          ; 8         ;
+; RD                  ; 5         ;
+; SPI_MOSI            ; 3         ;
+; spi_mouse[22]       ; 3         ;
+; spi_mouse[21]       ; 3         ;
+; spi_mouse[20]       ; 3         ;
+; spi_mouse[19]       ; 3         ;
+; spi_mouse[18]       ; 3         ;
+; spi_mouse[17]       ; 3         ;
+; spi_mouse[16]       ; 3         ;
+; spi_mouse[15]       ; 3         ;
+; spi_mouse[14]       ; 3         ;
+; spi_mouse[13]       ; 3         ;
+; spi_mouse[12]       ; 3         ;
+; spi_mouse[11]       ; 3         ;
+; spi_mouse[10]       ; 3         ;
+; spi_mouse[9]        ; 3         ;
+; spi_mouse[8]        ; 3         ;
+; spi_mouse[7]        ; 3         ;
+; spi_mouse[6]        ; 3         ;
+; spi_mouse[5]        ; 3         ;
+; spi_mouse[4]        ; 3         ;
+; spi_mouse[3]        ; 3         ;
+; spi_mouse[2]        ; 3         ;
+; spi_mouse[1]        ; 3         ;
+; spi_mouse[0]        ; 3         ;
+; DATA[4]~4           ; 2         ;
+; spi_kbd[39]         ; 2         ;
+; spi_kbd[38]         ; 2         ;
+; spi_kbd[37]         ; 2         ;
+; spi_kbd[36]         ; 2         ;
+; spi_kbd[35]         ; 2         ;
+; spi_kbd[34]         ; 2         ;
+; spi_kbd[33]         ; 2         ;
+; spi_kbd[32]         ; 2         ;
+; spi_kbd[31]         ; 2         ;
+; spi_kbd[30]         ; 2         ;
+; spi_kbd[29]         ; 2         ;
+; spi_kbd[28]         ; 2         ;
+; spi_kbd[27]         ; 2         ;
+; spi_kbd[26]         ; 2         ;
+; spi_kbd[25]         ; 2         ;
+; spi_kbd[24]         ; 2         ;
+; spi_mouse[23]       ; 2         ;
+; spi_kbd[23]         ; 2         ;
+; pre_beeper          ; 2         ;
+; spi_kbd[22]         ; 2         ;
+; spi_kbd[21]         ; 2         ;
+; spi_kbd[20]         ; 2         ;
+; spi_kbd[19]         ; 2         ;
+; spi_kbd[18]         ; 2         ;
+; spi_kbd[17]         ; 2         ;
+; spi_kbd[16]         ; 2         ;
+; spi_kbd[15]         ; 2         ;
+; spi_kbd[14]         ; 2         ;
+; spi_kbd[13]         ; 2         ;
+; spi_kbd[12]         ; 2         ;
+; spi_kbd[11]         ; 2         ;
+; spi_kbd[10]         ; 2         ;
+; spi_kbd[9]          ; 2         ;
+; spi_kbd[8]          ; 2         ;
+; spi_kbd[7]          ; 2         ;
+; spi_config[7]       ; 2         ;
+; spi_kbd[6]          ; 2         ;
+; spi_config[6]       ; 2         ;
+; spi_kbd[5]          ; 2         ;
+; spi_config[5]       ; 2         ;
+; spi_kbd[4]          ; 2         ;
+; spi_config[4]       ; 2         ;
+; spi_kbd[3]          ; 2         ;
+; spi_config[3]       ; 2         ;
+; spi_kbd[2]          ; 2         ;
+; spi_config[2]       ; 2         ;
+; spi_kbd[1]          ; 2         ;
+; spi_config[1]       ; 2         ;
+; reg_7ffd[0]         ; 2         ;
+; reg_7ffd[1]         ; 2         ;
+; reg_7ffd[2]         ; 2         ;
+; reg_7ffd[3]         ; 2         ;
+; reg_7ffd[4]         ; 2         ;
+; reg_7ffd[5]         ; 2         ;
+; reg_7ffd[6]         ; 2         ;
+; reg_7ffd[7]         ; 2         ;
+; spi_kbd[0]          ; 2         ;
+; spi_config[0]       ; 2         ;
+; clk_div_cnt[0]      ; 2         ;
+; DATA[7]~7           ; 1         ;
+; DATA[6]~6           ; 1         ;
+; DATA[5]~5           ; 1         ;
+; DATA[3]~3           ; 1         ;
+; DATA[2]~2           ; 1         ;
+; DATA[1]~1           ; 1         ;
+; DATA[0]~0           ; 1         ;
+; button_3            ; 1         ;
+; M1                  ; 1         ;
+; ~VCC~0              ; 1         ;
+; DATA[7]~105         ; 1         ;
+; DATA[6]~99          ; 1         ;
+; DATA[5]~93          ; 1         ;
+; DATA[3]~87          ; 1         ;
+; DATA[2]~81          ; 1         ;
+; DATA[1]~75          ; 1         ;
+; DATA[0]~69          ; 1         ;
+; IORQGE~1            ; 1         ;
+; kb_read             ; 1         ;
+; clk_div_cnt[2]      ; 1         ;
+; clk_div_cnt[1]      ; 1         ;
+; BDIR~2              ; 1         ;
+; BC1~1               ; 1         ;
+; enable_out          ; 1         ;
+; DATA[4]~61          ; 1         ;
++---------------------+-----------+
+
+
++--------------------------------------------------+
+; Other Routing Usage Summary                      ;
++-----------------------------+--------------------+
+; Other Routing Resource Type ; Usage              ;
++-----------------------------+--------------------+
+; Output enables              ; 1 / 6 ( 17 % )     ;
+; PIA buffers                 ; 183 / 288 ( 64 % ) ;
+; PIAs                        ; 218 / 288 ( 76 % ) ;
++-----------------------------+--------------------+
+
+
++-----------------------------------------------------------------------------+
+; LAB External Interconnect                                                   ;
++-----------------------------------------------+-----------------------------+
+; LAB External Interconnects  (Average = 27.25) ; Number of LABs  (Total = 8) ;
++-----------------------------------------------+-----------------------------+
+; 0 - 2                                         ; 0                           ;
+; 3 - 5                                         ; 0                           ;
+; 6 - 8                                         ; 0                           ;
+; 9 - 11                                        ; 0                           ;
+; 12 - 14                                       ; 0                           ;
+; 15 - 17                                       ; 0                           ;
+; 18 - 20                                       ; 0                           ;
+; 21 - 23                                       ; 4                           ;
+; 24 - 26                                       ; 0                           ;
+; 27 - 29                                       ; 0                           ;
+; 30 - 32                                       ; 2                           ;
+; 33 - 35                                       ; 2                           ;
++-----------------------------------------------+-----------------------------+
+
+
++-----------------------------------------------------------------------+
+; LAB Macrocells                                                        ;
++-----------------------------------------+-----------------------------+
+; Number of Macrocells  (Average = 12.88) ; Number of LABs  (Total = 8) ;
++-----------------------------------------+-----------------------------+
+; 0                                       ; 0                           ;
+; 1                                       ; 0                           ;
+; 2                                       ; 0                           ;
+; 3                                       ; 0                           ;
+; 4                                       ; 1                           ;
+; 5                                       ; 1                           ;
+; 6                                       ; 0                           ;
+; 7                                       ; 0                           ;
+; 8                                       ; 0                           ;
+; 9                                       ; 0                           ;
+; 10                                      ; 0                           ;
+; 11                                      ; 0                           ;
+; 12                                      ; 0                           ;
+; 13                                      ; 0                           ;
+; 14                                      ; 0                           ;
+; 15                                      ; 2                           ;
+; 16                                      ; 4                           ;
++-----------------------------------------+-----------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Logic Cell Interconnection                                                                                                                                                                                                                                                                                    ;
++-----+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+; LAB ; Logic Cell ; Input                                                                                                                                                                        ; Output                                                                                                      ;
++-----+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+;  A  ; LC16       ; spi_kbd[0], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[1], SPI_SCK                                                                                                                 ; spi_kbd[1], spi_kbd[2]                                                                                      ;
+;  A  ; LC6        ; button_3                                                                                                                                                                     ; led                                                                                                         ;
+;  A  ; LC11       ; spi_kbd[5], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[6], SPI_SCK                                                                                                                 ; spi_kbd[6], spi_kbd[7]                                                                                      ;
+;  A  ; LC8        ; spi_kbd[38], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[39], SPI_SCK                                                                                                               ; spi_kbd[39], DBG_PIN                                                                                        ;
+;  A  ; LC15       ; spi_kbd[1], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[2], SPI_SCK                                                                                                                 ; spi_kbd[2], spi_kbd[3]                                                                                      ;
+;  A  ; LC10       ; spi_kbd[6], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[7], SPI_SCK                                                                                                                 ; spi_kbd[7], spi_kbd[8]                                                                                      ;
+;  A  ; LC4        ; SPI_MOSI, SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[0], SPI_SCK                                                                                                                   ; spi_kbd[0], spi_kbd[1]                                                                                      ;
+;  A  ; LC14       ; spi_kbd[2], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[3], SPI_SCK                                                                                                                 ; spi_kbd[3], spi_kbd[4]                                                                                      ;
+;  A  ; LC5        ; SPI_MOSI, SPI_A[1], SPI_NSS, SPI_A[0], spi_mouse[0], SPI_SCK                                                                                                                 ; spi_mouse[0], spi_mouse[1], DATA[0]~69                                                                      ;
+;  A  ; LC1        ; spi_kbd[11], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[12], SPI_SCK                                                                                                               ; spi_kbd[12], spi_kbd[13]                                                                                    ;
+;  A  ; LC13       ; spi_kbd[3], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[4], SPI_SCK                                                                                                                 ; spi_kbd[4], spi_kbd[5]                                                                                      ;
+;  A  ; LC3        ; spi_kbd[9], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[10], SPI_SCK                                                                                                                ; spi_kbd[10], spi_kbd[11]                                                                                    ;
+;  A  ; LC9        ; spi_kbd[7], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[8], SPI_SCK                                                                                                                 ; spi_kbd[8], spi_kbd[9]                                                                                      ;
+;  A  ; LC12       ; spi_kbd[4], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[5], SPI_SCK                                                                                                                 ; spi_kbd[5], spi_kbd[6]                                                                                      ;
+;  A  ; LC2        ; spi_kbd[10], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[11], SPI_SCK                                                                                                               ; spi_kbd[11], spi_kbd[12]                                                                                    ;
+;  A  ; LC7        ; spi_kbd[8], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[9], SPI_SCK                                                                                                                 ; spi_kbd[9], spi_kbd[10]                                                                                     ;
+;  B  ; LC17       ; SPI_MOSI, SPI_NSS, SPI_A[0], SPI_A[1], spi_config[0], SPI_SCK                                                                                                                ; spi_config[0], spi_config[1]                                                                                ;
+;  B  ; LC19       ; DATA[7], ADR[1], ADR[5], ADR[15], ADR[0], ADR[9], ADR[11], ADR[12], ADR[13], ADR[14], ADR[2], ADR[3], ADR[4], ADR[6], ADR[7], ADR[8], ADR[10], IORQ, WR, reg_7ffd[7], CLK14M ; reg_7ffd[7], DATA[7]~105                                                                                    ;
+;  B  ; LC26       ; DATA[1], ADR[1], ADR[5], ADR[15], ADR[0], ADR[9], ADR[11], ADR[12], ADR[13], ADR[14], ADR[2], ADR[3], ADR[4], ADR[6], ADR[7], ADR[8], ADR[10], IORQ, WR, reg_7ffd[1], CLK14M ; reg_7ffd[1], DATA[1]~75                                                                                     ;
+;  B  ; LC27       ; DATA[0], ADR[1], ADR[5], ADR[15], ADR[0], ADR[9], ADR[11], ADR[12], ADR[13], ADR[14], ADR[2], ADR[3], ADR[4], ADR[6], ADR[7], ADR[8], ADR[10], IORQ, WR, reg_7ffd[0], CLK14M ; reg_7ffd[0], DATA[0]~69                                                                                     ;
+;  B  ; LC30       ; spi_config[0], SPI_NSS, SPI_A[0], SPI_A[1], spi_config[1], SPI_SCK                                                                                                           ; spi_config[1], spi_config[2]                                                                                ;
+;  C  ; LC43       ; reg_7ffd_read, reg_kemston_mouse_y, reg_kemston_mouse_b, reg_kemston_mouse_x                                                                                                 ; DATA[4], DATA[0], DATA[1], DATA[2], DATA[3], DATA[5], DATA[6], DATA[7]                                      ;
+;  C  ; LC35       ; reg_kemston_mouse_x, spi_mouse[15], reg_kemston_mouse_y, spi_mouse[23], reg_7ffd_read, reg_7ffd[7], reg_kemston_mouse_b, spi_mouse[7]                                        ; DATA[7]                                                                                                     ;
+;  C  ; LC33       ; reg_kemston_mouse_x, spi_mouse[14], reg_kemston_mouse_y, spi_mouse[22], reg_7ffd_read, reg_7ffd[6], reg_kemston_mouse_b, spi_mouse[6]                                        ; DATA[6]                                                                                                     ;
+;  C  ; LC38       ; DATA[6], ADR[1], ADR[5], ADR[15], ADR[0], ADR[9], ADR[11], ADR[12], ADR[13], ADR[14], ADR[2], ADR[3], ADR[4], ADR[6], ADR[7], ADR[8], ADR[10], IORQ, WR, reg_7ffd[6], CLK14M ; reg_7ffd[6], DATA[6]~99                                                                                     ;
+;  D  ; LC56       ; reg_kemston_mouse_x, spi_mouse[8], reg_kemston_mouse_y, spi_mouse[16], reg_7ffd_read, reg_7ffd[0], reg_kemston_mouse_b, spi_mouse[0]                                         ; DATA[0]                                                                                                     ;
+;  D  ; LC54       ; spi_mouse[16], SPI_A[1], SPI_NSS, SPI_A[0], spi_mouse[17], SPI_SCK                                                                                                           ; spi_mouse[17], DATA[1]~75, spi_mouse[18]                                                                    ;
+;  D  ; LC57       ; reg_kemston_mouse_x, spi_mouse[9], reg_kemston_mouse_y, spi_mouse[17], reg_7ffd_read, reg_7ffd[1], reg_kemston_mouse_b, spi_mouse[1]                                         ; DATA[1]                                                                                                     ;
+;  D  ; LC50       ; spi_mouse[17], SPI_A[1], SPI_NSS, SPI_A[0], spi_mouse[18], SPI_SCK                                                                                                           ; spi_mouse[18], DATA[2]~81, spi_mouse[19]                                                                    ;
+;  D  ; LC59       ; reg_kemston_mouse_x, spi_mouse[10], reg_kemston_mouse_y, spi_mouse[18], reg_7ffd_read, reg_7ffd[2], reg_kemston_mouse_b, spi_mouse[2]                                        ; DATA[2]                                                                                                     ;
+;  D  ; LC61       ; reg_kemston_mouse_x, spi_mouse[11], reg_kemston_mouse_y, spi_mouse[19], reg_7ffd_read, reg_7ffd[3], reg_kemston_mouse_b, spi_mouse[3]                                        ; DATA[3]                                                                                                     ;
+;  D  ; LC62       ; reg_kemston_mouse_x, spi_mouse[12], reg_kemston_mouse_y, spi_mouse[20], reg_7ffd_read, reg_7ffd[4], reg_kemston_mouse_b, spi_mouse[4]                                        ; DATA[4]                                                                                                     ;
+;  D  ; LC64       ; reg_kemston_mouse_x, spi_mouse[13], reg_kemston_mouse_y, spi_mouse[21], reg_7ffd_read, reg_7ffd[5], reg_kemston_mouse_b, spi_mouse[5]                                        ; DATA[5]                                                                                                     ;
+;  D  ; LC53       ;                                                                                                                                                                              ; WAIT                                                                                                        ;
+;  D  ; LC51       ; kb_read, IORQ                                                                                                                                                                ; IORQGE                                                                                                      ;
+;  D  ; LC55       ; spi_mouse[8], SPI_A[1], SPI_NSS, SPI_A[0], spi_mouse[9], SPI_SCK                                                                                                             ; spi_mouse[9], spi_mouse[10], DATA[1]~75                                                                     ;
+;  D  ; LC60       ; spi_mouse[9], SPI_A[1], SPI_NSS, SPI_A[0], spi_mouse[10], SPI_SCK                                                                                                            ; spi_mouse[10], spi_mouse[11], DATA[2]~81                                                                    ;
+;  D  ; LC52       ; spi_mouse[10], SPI_A[1], SPI_NSS, SPI_A[0], spi_mouse[11], SPI_SCK                                                                                                           ; spi_mouse[11], spi_mouse[12], DATA[3]~87                                                                    ;
+;  D  ; LC63       ; spi_mouse[11], SPI_A[1], SPI_NSS, SPI_A[0], spi_mouse[12], SPI_SCK                                                                                                           ; DATA[4]~61, spi_mouse[12], spi_mouse[13]                                                                    ;
+;  D  ; LC58       ; spi_mouse[0], SPI_A[1], SPI_NSS, SPI_A[0], spi_mouse[1], SPI_SCK                                                                                                             ; spi_mouse[1], spi_mouse[2], DATA[1]~75                                                                      ;
+;  D  ; LC49       ; spi_mouse[12], SPI_A[1], SPI_NSS, SPI_A[0], spi_mouse[13], SPI_SCK                                                                                                           ; spi_mouse[13], spi_mouse[14], DATA[5]~93                                                                    ;
+;  E  ; LC73       ; spi_mouse[1], SPI_A[1], SPI_NSS, SPI_A[0], spi_mouse[2], SPI_SCK                                                                                                             ; spi_mouse[2], spi_mouse[3], DATA[2]~81                                                                      ;
+;  E  ; LC79       ; spi_config[1], SPI_NSS, SPI_A[0], SPI_A[1], spi_config[2], SPI_SCK                                                                                                           ; spi_config[2], spi_config[3]                                                                                ;
+;  E  ; LC78       ; spi_config[2], SPI_NSS, SPI_A[0], SPI_A[1], spi_config[3], SPI_SCK                                                                                                           ; spi_config[3], spi_config[4]                                                                                ;
+;  E  ; LC74       ; spi_mouse[2], SPI_A[1], SPI_NSS, SPI_A[0], spi_mouse[3], SPI_SCK                                                                                                             ; spi_mouse[3], spi_mouse[4], DATA[3]~87                                                                      ;
+;  E  ; LC76       ; spi_config[3], SPI_NSS, SPI_A[0], SPI_A[1], spi_config[4], SPI_SCK                                                                                                           ; spi_config[4], spi_config[5]                                                                                ;
+;  E  ; LC75       ; spi_mouse[3], SPI_A[1], SPI_NSS, SPI_A[0], spi_mouse[4], SPI_SCK                                                                                                             ; DATA[4]~61, spi_mouse[4], spi_mouse[5]                                                                      ;
+;  E  ; LC72       ; spi_config[4], SPI_NSS, SPI_A[0], SPI_A[1], spi_config[5], SPI_SCK                                                                                                           ; spi_config[5], spi_config[6]                                                                                ;
+;  E  ; LC77       ; spi_mouse[4], SPI_A[1], SPI_NSS, SPI_A[0], spi_mouse[5], SPI_SCK                                                                                                             ; spi_mouse[5], spi_mouse[6], DATA[5]~93                                                                      ;
+;  E  ; LC70       ; spi_config[5], SPI_NSS, SPI_A[0], SPI_A[1], spi_config[6], SPI_SCK                                                                                                           ; spi_config[6], spi_config[7]                                                                                ;
+;  E  ; LC67       ; spi_mouse[15], SPI_A[1], SPI_NSS, SPI_A[0], spi_mouse[16], SPI_SCK                                                                                                           ; spi_mouse[16], DATA[0]~69, spi_mouse[17]                                                                    ;
+;  E  ; LC66       ; spi_mouse[7], SPI_A[1], SPI_NSS, SPI_A[0], spi_mouse[8], SPI_SCK                                                                                                             ; spi_mouse[8], spi_mouse[9], DATA[0]~69                                                                      ;
+;  E  ; LC68       ; spi_mouse[13], SPI_A[1], SPI_NSS, SPI_A[0], spi_mouse[14], SPI_SCK                                                                                                           ; spi_mouse[14], spi_mouse[15], DATA[6]~99                                                                    ;
+;  E  ; LC69       ; spi_mouse[14], SPI_A[1], SPI_NSS, SPI_A[0], spi_mouse[15], SPI_SCK                                                                                                           ; spi_mouse[15], spi_mouse[16], DATA[7]~105                                                                   ;
+;  E  ; LC65       ; spi_mouse[6], SPI_A[1], SPI_NSS, SPI_A[0], spi_mouse[7], SPI_SCK                                                                                                             ; spi_mouse[7], spi_mouse[8], DATA[7]~105                                                                     ;
+;  E  ; LC80       ; spi_config[6], SPI_NSS, SPI_A[0], SPI_A[1], spi_config[7], SPI_SCK                                                                                                           ; spi_config[7], kb_read                                                                                      ;
+;  E  ; LC71       ; spi_mouse[5], SPI_A[1], SPI_NSS, SPI_A[0], spi_mouse[6], SPI_SCK                                                                                                             ; spi_mouse[6], spi_mouse[7], DATA[6]~99                                                                      ;
+;  F  ; LC88       ; ADR[14], M1, ADR[1], ADR[13], ADR[15], IORQ                                                                                                                                  ; BC1                                                                                                         ;
+;  F  ; LC89       ; WR, ADR[1], ADR[13], ADR[15], IORQ                                                                                                                                           ; BDIR                                                                                                        ;
+;  F  ; LC81       ; clk_div_cnt[0], CLK14M                                                                                                                                                       ; clk_div_cnt[2]                                                                                              ;
+;  F  ; LC91       ; ADR[1], ADR[5], ADR[15], ADR[0], ADR[9], ADR[11], ADR[12], ADR[13], ADR[14], ADR[2], ADR[3], ADR[4], ADR[6], ADR[7], ADR[8], ADR[10], IORQ, RD, CLK14M                       ; DATA[4]~61, DATA[0]~63, DATA[0]~69, DATA[1]~75, DATA[2]~81, DATA[3]~87, DATA[5]~93, DATA[6]~99, DATA[7]~105 ;
+;  F  ; LC93       ; ADR[1], ADR[5], ADR[15], ADR[0], ADR[9], ADR[11], ADR[12], ADR[13], ADR[14], ADR[2], ADR[3], ADR[4], ADR[6], ADR[7], IORQ, RD, ADR[8], ADR[10], CLK14M                       ; DATA[4]~61, DATA[0]~63, DATA[0]~69, DATA[1]~75, DATA[2]~81, DATA[3]~87, DATA[5]~93, DATA[6]~99, DATA[7]~105 ;
+;  F  ; LC90       ; ADR[8], ADR[10], ADR[1], ADR[5], ADR[15], ADR[0], ADR[9], ADR[11], ADR[12], ADR[13], ADR[14], ADR[2], ADR[3], ADR[4], ADR[6], ADR[7], IORQ, RD, CLK14M                       ; DATA[4]~61, DATA[0]~63, DATA[0]~69, DATA[1]~75, DATA[2]~81, DATA[3]~87, DATA[5]~93, DATA[6]~99, DATA[7]~105 ;
+;  F  ; LC94       ; CLK14M                                                                                                                                                                       ; clk_div_cnt[1], clk_div_cnt[2]                                                                              ;
+;  F  ; LC95       ; DATA[5], ADR[1], ADR[5], ADR[15], ADR[0], ADR[9], ADR[11], ADR[12], ADR[13], ADR[14], ADR[2], ADR[3], ADR[4], ADR[6], ADR[7], ADR[8], ADR[10], IORQ, WR, reg_7ffd[5], CLK14M ; reg_7ffd[5], DATA[5]~93                                                                                     ;
+;  F  ; LC96       ; DATA[4], ADR[1], ADR[5], ADR[15], ADR[0], ADR[9], ADR[11], ADR[12], ADR[13], ADR[14], ADR[2], ADR[3], ADR[4], ADR[6], ADR[7], ADR[8], ADR[10], IORQ, WR, reg_7ffd[4], CLK14M ; DATA[4]~61, reg_7ffd[4]                                                                                     ;
+;  F  ; LC84       ; DATA[3], ADR[1], ADR[5], ADR[15], ADR[0], ADR[9], ADR[11], ADR[12], ADR[13], ADR[14], ADR[2], ADR[3], ADR[4], ADR[6], ADR[7], ADR[8], ADR[10], IORQ, WR, reg_7ffd[3], CLK14M ; reg_7ffd[3], DATA[3]~87                                                                                     ;
+;  F  ; LC82       ; DATA[2], ADR[1], ADR[5], ADR[15], ADR[0], ADR[9], ADR[11], ADR[12], ADR[13], ADR[14], ADR[2], ADR[3], ADR[4], ADR[6], ADR[7], ADR[8], ADR[10], IORQ, WR, reg_7ffd[2], CLK14M ; reg_7ffd[2], DATA[2]~81                                                                                     ;
+;  F  ; LC83       ; ADR[8], ADR[10], ADR[1], ADR[5], ADR[15], ADR[0], ADR[9], ADR[11], ADR[12], ADR[13], ADR[14], ADR[2], ADR[3], ADR[4], ADR[6], ADR[7], IORQ, RD, CLK14M                       ; DATA[4]~61, DATA[0]~63, DATA[0]~69, DATA[1]~75, DATA[2]~81, DATA[3]~87, DATA[5]~93, DATA[6]~99, DATA[7]~105 ;
+;  F  ; LC86       ; clk_div_cnt[1], clk_div_cnt[0], CLK14M                                                                                                                                       ; CLK1_75                                                                                                     ;
+;  F  ; LC92       ; spi_config[7], ADR[0], IORQ, RD, CLK14M                                                                                                                                      ; IORQGE~1                                                                                                    ;
+;  F  ; LC85       ; DATA[4], ADR[0], ADR[1], ADR[5], ADR[2], ADR[3], ADR[4], ADR[6], ADR[7], IORQ, WR, pre_beeper, CLK14M                                                                        ; pre_beeper, BEEP                                                                                            ;
+;  G  ; LC107      ; spi_kbd[21], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[22], SPI_SCK                                                                                                               ; spi_kbd[22], spi_kbd[23]                                                                                    ;
+;  G  ; LC99       ; spi_kbd[14], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[15], SPI_SCK                                                                                                               ; spi_kbd[15], spi_kbd[16]                                                                                    ;
+;  G  ; LC112      ; spi_kbd[19], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[20], SPI_SCK                                                                                                               ; spi_kbd[20], spi_kbd[21]                                                                                    ;
+;  G  ; LC103      ; spi_kbd[20], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[21], SPI_SCK                                                                                                               ; spi_kbd[21], spi_kbd[22]                                                                                    ;
+;  G  ; LC104      ; spi_kbd[16], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[17], SPI_SCK                                                                                                               ; spi_kbd[17], spi_kbd[18]                                                                                    ;
+;  G  ; LC101      ; spi_kbd[12], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[13], SPI_SCK                                                                                                               ; spi_kbd[13], spi_kbd[14]                                                                                    ;
+;  G  ; LC105      ; spi_kbd[17], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[18], SPI_SCK                                                                                                               ; spi_kbd[18], spi_kbd[19]                                                                                    ;
+;  G  ; LC106      ; spi_kbd[22], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[23], SPI_SCK                                                                                                               ; spi_kbd[23], spi_kbd[24]                                                                                    ;
+;  G  ; LC100      ; spi_kbd[13], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[14], SPI_SCK                                                                                                               ; spi_kbd[14], spi_kbd[15]                                                                                    ;
+;  G  ; LC108      ; spi_kbd[23], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[24], SPI_SCK                                                                                                               ; spi_kbd[24], spi_kbd[25]                                                                                    ;
+;  G  ; LC109      ; spi_kbd[24], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[25], SPI_SCK                                                                                                               ; spi_kbd[25], spi_kbd[26]                                                                                    ;
+;  G  ; LC110      ; spi_kbd[25], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[26], SPI_SCK                                                                                                               ; spi_kbd[26], spi_kbd[27]                                                                                    ;
+;  G  ; LC111      ; spi_kbd[26], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[27], SPI_SCK                                                                                                               ; spi_kbd[27], spi_kbd[28]                                                                                    ;
+;  G  ; LC98       ; spi_kbd[15], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[16], SPI_SCK                                                                                                               ; spi_kbd[16], spi_kbd[17]                                                                                    ;
+;  G  ; LC102      ; spi_kbd[27], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[28], SPI_SCK                                                                                                               ; spi_kbd[28], spi_kbd[29]                                                                                    ;
+;  G  ; LC97       ; spi_kbd[18], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[19], SPI_SCK                                                                                                               ; spi_kbd[19], spi_kbd[20]                                                                                    ;
+;  H  ; LC113      ; spi_mouse[18], SPI_A[1], SPI_NSS, SPI_A[0], spi_mouse[19], SPI_SCK                                                                                                           ; spi_mouse[19], DATA[3]~87, spi_mouse[20]                                                                    ;
+;  H  ; LC124      ; spi_mouse[22], SPI_A[1], SPI_NSS, SPI_A[0], spi_mouse[23], SPI_SCK                                                                                                           ; spi_mouse[23], DATA[7]~105                                                                                  ;
+;  H  ; LC121      ; spi_mouse[21], SPI_A[1], SPI_NSS, SPI_A[0], spi_mouse[22], SPI_SCK                                                                                                           ; spi_mouse[22], DATA[6]~99, spi_mouse[23]                                                                    ;
+;  H  ; LC119      ; spi_kbd[28], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[29], SPI_SCK                                                                                                               ; spi_kbd[29], spi_kbd[30]                                                                                    ;
+;  H  ; LC123      ; spi_kbd[29], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[30], SPI_SCK                                                                                                               ; spi_kbd[30], spi_kbd[31]                                                                                    ;
+;  H  ; LC125      ; spi_kbd[30], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[31], SPI_SCK                                                                                                               ; spi_kbd[31], spi_kbd[32]                                                                                    ;
+;  H  ; LC126      ; spi_kbd[31], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[32], SPI_SCK                                                                                                               ; spi_kbd[32], spi_kbd[33]                                                                                    ;
+;  H  ; LC122      ; spi_mouse[20], SPI_A[1], SPI_NSS, SPI_A[0], spi_mouse[21], SPI_SCK                                                                                                           ; spi_mouse[21], DATA[5]~93, spi_mouse[22]                                                                    ;
+;  H  ; LC128      ; spi_kbd[33], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[34], SPI_SCK                                                                                                               ; spi_kbd[34], spi_kbd[35]                                                                                    ;
+;  H  ; LC118      ; spi_kbd[34], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[35], SPI_SCK                                                                                                               ; spi_kbd[35], spi_kbd[36]                                                                                    ;
+;  H  ; LC120      ; spi_kbd[35], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[36], SPI_SCK                                                                                                               ; spi_kbd[36], spi_kbd[37]                                                                                    ;
+;  H  ; LC116      ; spi_kbd[36], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[37], SPI_SCK                                                                                                               ; spi_kbd[37], spi_kbd[38]                                                                                    ;
+;  H  ; LC114      ; spi_kbd[37], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[38], SPI_SCK                                                                                                               ; spi_kbd[38], spi_kbd[39]                                                                                    ;
+;  H  ; LC117      ; spi_mouse[19], SPI_A[1], SPI_NSS, SPI_A[0], spi_mouse[20], SPI_SCK                                                                                                           ; DATA[4]~61, spi_mouse[20], spi_mouse[21]                                                                    ;
+;  H  ; LC127      ; spi_kbd[32], SPI_A[1], SPI_NSS, SPI_A[0], spi_kbd[33], SPI_SCK                                                                                                               ; spi_kbd[33], spi_kbd[34]                                                                                    ;
++-----+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------+
+; Fitter Device Options                                         ;
++----------------------------------------------+----------------+
+; Option                                       ; Setting        ;
++----------------------------------------------+----------------+
+; Enable user-supplied start-up clock (CLKUSR) ; Off            ;
+; Enable device-wide reset (DEV_CLRn)          ; Off            ;
+; Enable device-wide output enable (DEV_OE)    ; Off            ;
+; Enable INIT_DONE output                      ; Off            ;
+; Configuration scheme                         ; Passive Serial ;
+; Security bit                                 ; Off            ;
+; Base pin-out file on sameframe device        ; Off            ;
++----------------------------------------------+----------------+
+
+
++-----------------+
+; Fitter Messages ;
++-----------------+
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (119006): Selected device EPM7128STC100-15 for design "ay_verilog_probe"
+Info: Quartus II 64-Bit Fitter was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4674 megabytes
+    Info: Processing ended: Wed Oct 06 00:55:03 2021
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

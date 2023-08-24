@@ -1,0 +1,2 @@
+https://jonthysell.com/2014/07/26/reading-sega-genesis-controllers-with-arduino/
+https://eax.me/arduino-sega-controller/
